@@ -1,6 +1,6 @@
 import { Alert } from "bootstrap";
 import React from "react";
-import { Card, Container, Spinner } from "react-bootstrap";
+import { Table, Container, Spinner } from "react-bootstrap";
 import { useFetchItemsQuery } from "./apiService";
 import { useState } from "react";
 //import { Button } from "bootstrap";
@@ -34,15 +34,25 @@ const AddApi = () => {
 
   return (
     <Container className="p-5">
-      {data &&
-        data.map((post) => (
-          <Card key={post.id} className="mb-3">
-            <Card.Body>
-              <Card.Title>{post.title}</Card.Title>
-              <Card.Text>{post.body}</Card.Text>
-            </Card.Body>
-          </Card>
-        ))}
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data &&
+            data.map((post) => (
+              <tr key={post.id}>
+                <td>{post.id}</td>
+                <td>{post.title}</td>
+                <td>{post.body}</td>
+              </tr>
+            ))}
+        </tbody>
+      </Table>
       <div className="pagination d-flex justify-content-between">
         <button onClick={handlePrev} disabled={currentPage === 1}>
           Previous
@@ -50,6 +60,23 @@ const AddApi = () => {
         <button onClick={handleNext}>Next</button>
       </div>
     </Container>
+    // <Container className="p-5">
+    //   {data &&
+    //     data.map((post) => (
+    //       <Card key={post.id} className="mb-3">
+    //         <Card.Body>
+    //           <Card.Title>{post.title}</Card.Title>
+    //           <Card.Text>{post.body}</Card.Text>
+    //         </Card.Body>
+    //       </Card>
+    //     ))}
+    //   <div className="pagination d-flex justify-content-between">
+    //     <button onClick={handlePrev} disabled={currentPage === 1}>
+    //       Previous
+    //     </button>
+    //     <button onClick={handleNext}>Next</button>
+    //   </div>
+    // </Container>
   );
 };
 
