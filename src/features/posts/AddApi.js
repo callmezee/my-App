@@ -60,24 +60,25 @@ const AddApi = () => {
         <button onClick={handleNext}>Next</button>
       </div>
     </Container>
-    // <Container className="p-5">
-    //   {data &&
-    //     data.map((post) => (
-    //       <Card key={post.id} className="mb-3">
-    //         <Card.Body>
-    //           <Card.Title>{post.title}</Card.Title>
-    //           <Card.Text>{post.body}</Card.Text>
-    //         </Card.Body>
-    //       </Card>
-    //     ))}
-    //   <div className="pagination d-flex justify-content-between">
-    //     <button onClick={handlePrev} disabled={currentPage === 1}>
-    //       Previous
-    //     </button>
-    //     <button onClick={handleNext}>Next</button>
-    //   </div>
-    // </Container>
   );
 };
 
 export default AddApi;
+
+// <Container className="p-5">
+//   {data &&
+//     data.map((post) => (
+//       <Card key={post.id} className="mb-3">
+//         <Card.Body>
+//           <Card.Title>{post.title}</Card.Title>
+//           <Card.Text>{post.body}</Card.Text>
+//         </Card.Body>
+//       </Card>
+//     ))}
+//   <div className="pagination d-flex justify-content-between">
+//     <button onClick={handlePrev} disabled={currentPage === 1}>
+//       Previous
+//     </button>
+//     <button onClick={handleNext}>Next</button>
+//   </div>
+// </Container>
