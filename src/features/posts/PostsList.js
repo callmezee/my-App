@@ -27,9 +27,6 @@ const PostsList = () => {
 
   return (
     <>
-      {/* <h2>Posts</h2>
-      {renderedPosts} */}
-
       <Container className="p-5">
         <h2>Posts</h2>
         <Table striped bordered hover responsive>
