@@ -11,6 +11,7 @@ function generateSitemap() {
     { url: "/add-api", changefreq: "daily", priority: 0.6 },
     { url: "/about", changefreq: "daily", priority: 0.5 },
     { url: "/contact", changefreq: "daily", priority: 0.7 },
+    { url: "/news", changefreq: "daily", priority: 0.7 },
   ];
 
   const stream = new SitemapStream({ hostname: "http://localhost:5001" });

@@ -44,18 +44,20 @@ app.get("/sitemap.xml", async (req, res) => {
   try {
     const sitemap = await generateSitemap();
     res.type("application/xml");
+    console.log("Created");
     res.send(sitemap);
   } catch (err) {
+    console.log("Failed");
     res.status(500).send("Error generating sitemap");
   }
 });
 
-// All other routes handled by React
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
+// // All other routes handled by React
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "index.html"));
+// });
 
-const PORT = 5001;
+const PORT = 5002;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
