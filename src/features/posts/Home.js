@@ -20,7 +20,7 @@ const Home = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5001", formData);
+      const response = await axios.post("http://localhost:5002", formData);
       alert("Data submitted successfully");
       console.log(response.data);
     } catch (error) {
